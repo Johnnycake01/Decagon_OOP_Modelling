@@ -1,3 +1,5 @@
+import java.lang.NumberFormatException
+
 object Principal: Staff(){
     private var acceptedApplicantName: ArrayList<String> = ArrayList()
     override fun performAction():String{
@@ -41,7 +43,7 @@ object Principal: Staff(){
         Principal.setAge(principalAge)
         println("welcome Mr ${Principal.getName()} what would you love to do")
         println("select 1) to hire applicant or 2) to fire a staff")
-        val input3 = Integer.valueOf(readLine())
+        val input3 = try{Integer.valueOf(readLine())}catch (e: NumberFormatException){println("Enter Integer Value")}
         if (input3 == 1){
             println(Applicant.showApplicant(Applicant.countApply))
 

@@ -1,3 +1,5 @@
+import java.lang.NumberFormatException
+
 class NonAcademicStaffs: Staff(), StaffActions {
     private var status: String = ""
     private fun getStatus(): String {
@@ -20,7 +22,7 @@ class NonAcademicStaffs: Staff(), StaffActions {
         fun getStaffInfo(){
             val newStaff = NonAcademicStaffs()
             println("Enter non teaching staff status either \n1)Cleaner \n2)Librarian ")
-            val staffStatus = Integer.valueOf(readLine())
+            val staffStatus = try{Integer.valueOf(readLine())}catch (e: NumberFormatException){println("Enter Integer Value")}
             if (staffStatus == 1){
                 newStaff.setStatus("cleaner")
             }else if (staffStatus == 2){
