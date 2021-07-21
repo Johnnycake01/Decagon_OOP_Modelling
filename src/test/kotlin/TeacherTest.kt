@@ -24,7 +24,7 @@ internal class TeacherTest {
         student2.setAge(23)
         Student.studentArray.add(student1)
         Student.studentArray.add(student2)
-        assertEquals("[name='Johnson', age=23, id=112, name='Tunde', age=23, id=111]",techer.showStudents())
+        assertEquals("[name='Johnson', age=23, id=112, name='Tunde', age=23, id=111]",techer.showStudents().toString())
     }
 
     @Test

@@ -52,7 +52,7 @@ class Applicant: User() {
                 3 -> "WAEC"
                 else -> null.toString()
             }
-
+            println("Congratulation, you have successfully applied, we will get back to you")
             apply(newApplicant)
         }
    }
